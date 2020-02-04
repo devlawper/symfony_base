@@ -15,3 +15,8 @@ Base pour projet symfony 5
 
 ---
 * Création de la base de donnée `php bin/console doctrine:database:create`
+* Création de l'entité User
+* Création du AccountController pour la gestion du login, logout et register
+* Installation des fixtures et de faker : `composer require --dev orm-fixtures`, `composer require fzaninotto/faker`
+* Création de la page de login et d'inscription (formulaires basé sur bootstrap, voir config dans tiwg.yaml)
+* Création des pages et méthodes pour la modification du profil du mot de passe et l'affichage du profil
