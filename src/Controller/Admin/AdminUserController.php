@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\Admin\AdminUserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,11 +20,17 @@ class AdminUserController extends AbstractController
      * @param UserRepository $userRepository
      * @return Response
      */
-    public function index(UserRepository $userRepository)
+    public function index(UserRepository $userRepository, PaginatorInterface $paginator, Request $request)
     {
+        $paginatedUsers = $paginator->paginate(
+            $userRepository->findAllUsers(),
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('admin/user/index.html.twig', [
             'activeMenu' => 'user',
-            'users' => $userRepository->findAll()
+            'users' => $paginatedUsers
         ]);
     }
 

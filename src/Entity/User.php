@@ -44,9 +44,15 @@ class User implements UserInterface
      */
     private $userRoles;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
     public function __construct()
     {
         $this->userRoles = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getFullName()
@@ -177,6 +183,18 @@ class User implements UserInterface
             $this->userRoles->removeElement($role);
             $role->removeUser($this);
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

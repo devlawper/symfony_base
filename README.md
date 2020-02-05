@@ -28,3 +28,5 @@ Base pour projet symfony 5
 * Mise en place d'une base, d'un header et d'un footer indépendant du front
 * Création d'un controller pour le dashboard
 * Création de l'interface de gestion utilisateur (suppression, édition)
+* Ajout de select2 pour le BO
+* Ajout de la pagination avec KnpPaginator `composer require knplabs/knp-paginator-bundle`
