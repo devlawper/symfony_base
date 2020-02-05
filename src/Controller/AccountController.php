@@ -95,7 +95,7 @@ class AccountController extends AbstractController
      */
     public function myAccount()
     {
-        return $this->render('user/index.html.twig', [
+        return $this->render('account/index.html.twig', [
             'user' => $this->getUser()
         ]);
 

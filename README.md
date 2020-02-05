@@ -19,4 +19,12 @@ Base pour projet symfony 5
 * Création du AccountController pour la gestion du login, logout et register
 * Installation des fixtures et de faker : `composer require --dev orm-fixtures`, `composer require fzaninotto/faker`
 * Création de la page de login et d'inscription (formulaires basé sur bootstrap, voir config dans tiwg.yaml)
-* Création des pages et méthodes pour la modification du profil du mot de passe et l'affichage du profil
+* Création des pages et méthodes pour la modification du profil, du mot de passe et l'affichage du profil
+
+---
+* Création de la gestion de l'administration
+* Mise en place d'une page de login neutre
+* Gestion du login et logout dans le AdminAccountController
+* Mise en place d'une base, d'un header et d'un footer indépendant du front
+* Création d'un controller pour le dashboard
+* Création de l'interface de gestion utilisateur (suppression, édition)
